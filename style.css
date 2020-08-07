@@ -1,0 +1,678 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body {
+    overflow-x: hidden;
+}
+
+html {
+    font-family: ubuntu condensed;
+}
+
+.wrapper {
+    max-width: 1366px;
+    min-height: 150vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+header {
+    width: 100%;
+    height: 100vh;
+    background-image: url(img/code.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* .avatar {
+    position: absolute;
+    top: 100px;
+    left: calc(50% - 150px);
+    background-image: url("img/avatar.jpg");
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    background-size: cover;
+    background-position-y: -25px;
+    box-shadow: 9px 10px 11px 3px rgba(0, 0, 0, 0.75);
+
+
+} */
+
+
+/* .btn {
+    width: 150px;
+    height: 80px;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 700;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    background: none;
+    border: 4px solid black;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    cursor: pointer;
+} */
+
+
+div.burger {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    color: white;
+    z-index: 10;
+}
+
+aside.show {
+    top: 0;
+    transition: .5s;
+}
+ 
+i.fa.show {
+    display: block;
+   
+}
+ 
+i.fa {
+    display: none;
+}
+
+aside {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -100%;
+    left: calc(50% - 1/2(1366px));
+    max-width: 1366px;
+    height: 50px;
+    width: 100%;
+    color: white;
+    z-index: 5;
+    background-color: black;
+    opacity: 0.7;
+    transition: .5s;
+}
+
+
+aside div.logo {
+    margin-right: auto;
+    margin-left: 20px;
+}
+
+aside a li {
+    list-style: none;
+}
+
+aside a {
+    padding-right: 30px;
+    text-decoration: none;
+    color: white;
+}
+
+aside a:nth-child(4) {
+    margin-right: 40px;
+}
+
+a.intro {
+    position: relative;
+    display: inline-block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #2196f3;
+    padding: 15px 30px;
+    transition: .2s;
+    overflow: hidden;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+a.intro:hover {
+    color: #fff;
+    background: #2196f3;
+    box-shadow: 0 0 10px #2196f3, 0 0 10px #2196f3, 0 0 10px #2196f3;
+    transition-delay: .5s;
+}
+
+a span {
+    position: absolute;
+    display: block;
+}
+
+a span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #2196f3);
+
+
+}
+
+a:hover span:nth-child(1) {
+    left: 0;
+    transition: .25s;
+}
+
+a span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #2196f3);
+
+}
+
+a:hover span:nth-child(3) {
+    right: 0;
+    transition: .5s;
+    transition-delay: .6s;
+
+}
+
+a span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #2196f3);
+
+}
+
+a:hover span:nth-child(2) {
+    top: 0;
+    transition: .5s;
+    transition-delay: 0.2s;
+
+}
+
+a span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #2196f3);
+
+}
+
+a:hover span:nth-child(4) {
+    bottom: 0;
+    transition: .25s;
+    transition-delay: 1s;
+
+}
+
+
+.btn::before,
+.btn::after {
+    content: "";
+    position: absolute;
+    background: white;
+    width: 14px;
+    height: 4px;
+    transform: skewX(50deg);
+    transition: .4s linear;
+
+}
+
+.btn::before {
+    top: -4px;
+    left: 10%;
+}
+
+.btn::after {
+    bottom: -4px;
+    right: 10%;
+}
+
+.btn:hover::before {
+    left: 80%;
+}
+
+.btn:hover::after {
+    right: 80%;
+}
+
+nav {
+    width: 100%;
+    height: 80px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 4px rgb(3, 53, 252) solid;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    margin-right: 40px;
+    padding: 8px 8px;
+    font-size: 24px; 
+    border-radius: 10px;
+    transition: .7s;
+}
+
+nav a:hover {
+    background-color: rgb(3, 53, 252);
+}
+
+.name {
+    color: white;
+    font-size: 61px;
+    margin-right: 500px;
+    margin-left: 20px;
+    font-family: righteous;
+}
+
+/* grid */
+section.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 110px 1fr 1fr;
+    grid-template-areas: "title title title title""name1 name2 name3 name4""skill skill skill skill";
+    background-color: rgb(101, 106, 107);
+    width: 100%;
+    height: 100vh;
+    /* border-bottom: 1px black solid; */
+}
+
+section.about img {
+    transform: scale(0);
+}
+
+section.about img.show {
+    transform: scale(1);
+    transition: 1s;
+}
+
+div.title {
+    grid-area: title;
+    justify-self: center;
+
+
+    /* transform: translateY(50%); */
+}
+
+div.title h1 {
+    font-size: 74px;
+    padding: 30px;
+}
+
+
+section.about img {
+    width: 30%;
+    justify-self: center;
+    align-self: center;
+}
+
+/* skills bar */
+
+
+div.container ul li {
+    position: relative;
+    list-style-type: none;
+    font-size: 18px;
+    margin: 15px 0;
+    /* font-weight: 500; */
+}
+
+div.container {
+    grid-area: skill;
+    width: 500px;
+    margin: 0 auto;
+    transform: translateX(-100vw);
+    transition: 2s;
+
+}
+
+section.about ul li:before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background-color: rgba(54, 126, 233, .5);
+    border-radius: 1000px;
+}
+
+ul li:after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 0;
+    height: 15px;
+    background-color: rgba(54, 126, 233, 1);
+    border-radius: 1000px;
+    animation: 2s ease 3.5s forwards;
+}
+
+ul li.ht_2:after {
+    animation-name: html;
+}
+
+ul li.cs_2:after {
+    animation-name: cs;
+}
+
+ul li.js_2:after {
+    animation-name: js;
+}
+
+ul li.ps_2:after {
+    animation-name: ps;
+}
+
+@keyframes html {
+    to {
+        width: 90%;
+    }
+}
+
+@keyframes cs {
+    to {
+        width: 50%;
+    }
+}
+
+@keyframes js {
+    to {
+        width: 15%;
+    }
+}
+
+@keyframes ps {
+    to {
+        width: 10%;
+    }
+}
+
+section.portfolio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(120, 126, 128);
+    width: 100%;
+    height: 100vh;
+    /* border-bottom: 1px black solid; */
+
+}
+
+section.portfolio h1 {
+    padding: 50px;
+    font-size: 74px;
+}
+
+div.projects.active {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    transform: translateX(0);
+    transition: 1s;
+}
+
+div.projects {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    transform: translateX(-100vw);
+}
+
+div.projects2.active {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    transform: translateX(0);
+    transition: 1s;
+}
+
+div.projects2 {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    transform: translateX(100vw);
+}
+
+div.pro1 {
+    display: flex;
+    padding-bottom: 20px;
+    /* width: 305px;
+    height: 203px; */
+
+}
+
+div.description1,
+div.description2 {
+    padding: 15px 15px;
+    background-color: orange;
+}
+
+div.dacza {
+    background-image: url(img/dacza.jpg);
+    min-width: 305px;
+    min-height: 203px;
+}
+
+div.et {
+    background-image: url(img/dacza.jpg);
+    width: 305px;
+    height: 203px;
+}
+
+section.presentation {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #ccc;
+    /* border-bottom: 1px black solid; */
+    overflow: hidden;
+    z-index: -100;
+}
+
+img.color {
+    position: absolute;
+    bottom: 0;
+    right: 5%;
+    height: 56%;
+    z-index: 100;
+    animation: color 5s linear infinite;
+}
+
+img.gray {
+    position: absolute;
+    bottom: -10%;
+    height: 110%;
+    opacity: 0.2;
+    animation: gray 5s linear infinite;
+}
+
+div.member {
+    position: absolute;
+    top: 20%;
+    left: 15%;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+
+   
+}
+section.presentation h1 {  
+    top: 30px;
+    font-size: 50px;
+    color: black;
+    z-index: 100;
+    letter-spacing: 2px;
+}
+
+section.presentation h2 {  
+    top: 30px;
+    font-size: 30px;
+    color: black;
+    z-index: 100;
+}
+
+@keyframes color {
+    0% {
+        transform: translateX(0);
+        opacity: 0;
+    }
+
+    8% {
+        opacity: 0;
+    }
+
+    13% {
+        opacity: 1;
+    }
+
+    87% {
+        opacity: 1;
+    }
+
+    92% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(-30%);
+        opacity: 0;
+    }
+}
+
+@keyframes gray {
+    0% {
+        transform: translateX(0) scale(1);
+        opacity: 0;
+    }
+
+    8% {
+        opacity: 0;
+    }
+
+    13% {
+        opacity: 0.2;
+    }
+
+    87% {
+        opacity: 0.2;
+    }
+
+    92% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(10%) scale(1.2);
+        opacity: 0;
+    }
+}
+
+section.contact {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(120, 126, 128);
+    /* border-bottom: 1px black solid; */
+
+}
+
+div.title2 {
+    text-align: center;
+    padding: 40px 0;
+}
+
+div.title2 h1 {
+    font-size: 74px;
+}
+
+span {
+    color: orange;
+}
+
+div.box {
+    display: flex;
+    justify-content: center;
+}
+
+div.box div.photo {
+    margin: auto 15px;
+    width: 200px;
+    height: 200px;
+    background-image: url(img/pcdesk.jpg);
+    background-size: cover;
+    border-radius: 40%;
+
+
+}
+
+div.box ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+}
+
+div.box ul li {
+    margin: 15px 0;
+    font-size: 20px;
+}
+
+div.photo,
+div.personal1,
+div.personal2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 300px;
+    height: 300px;
+    /* border: 1px solid orange; */
+}
+
+footer {
+    position: relative;
+    width: 100%;
+    height: 50px;
+
+}
+
+div.bottom i:hover {
+    color: orange;
+    transition: .5s;
+}
+
+.bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: rgb(207, 226, 255);
+   
+}
+
+div.bottom i {
+  
+    font-size: 20px;
+    padding: 0 10px;
+    color: black;
+}
+
+div.socials {
+    margin-left: 50px;
+    border-left: ridge 1px black ;
+    
+}
